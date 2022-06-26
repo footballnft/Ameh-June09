@@ -1,11 +1,10 @@
 import styled from 'styled-components'
-import { Flex, Heading, Text, Link, useMatchBreakpointsContext } from '@pancakeswap/uikit'
+import { Flex, Heading, Text } from '@pancakeswap/uikit'
 import { useTranslation } from 'contexts/Localization'
 import ConnectWalletButton from 'components/ConnectWalletButton'
-import Container from 'components/Layout/Container'
 import { useWeb3React } from '@web3-react/core'
 import SunburstSvg from './SunburstSvg'
-import CompositeImage from './CompositeImage'
+
 
 const BgWrapper = styled.div`
   overflow: hidden;
@@ -35,7 +34,7 @@ const Wrapper = styled(Flex)`
   overflow: hidden;
 `
 
-const FloatingPancakesWrapper = styled(Container)`
+/* const FloatingPancakesWrapper = styled(Container)`
   overflow: hidden;
   position: absolute;
   width: 100%;
@@ -79,11 +78,10 @@ const bottomRightImage = {
     { src: '2-right', alt: 'Pancake flying on the right' },
   ],
 }
-
+*/
 const Footer = () => {
   const { t } = useTranslation()
   const { account } = useWeb3React()
-  const { isTablet, isDesktop } = useMatchBreakpointsContext()
 
   return (
     <>
@@ -92,16 +90,7 @@ const Footer = () => {
           <StyledSunburst />
         </Flex>
       </BgWrapper>
-      {(isTablet || isDesktop) && (
-        <FloatingPancakesWrapper>
-          <TopLeftImgWrapper>
-            <CompositeImage {...topLeftImage} maxHeight="256px" />
-          </TopLeftImgWrapper>
-          <BottomRightImgWrapper>
-            <CompositeImage {...bottomRightImage} maxHeight="256px" />
-          </BottomRightImgWrapper>
-        </FloatingPancakesWrapper>
-      )}
+      
       <Wrapper>
         <Heading mb="24px" scale="xl" color="white">
           {t('Start in seconds.')}
@@ -113,9 +102,6 @@ const Footer = () => {
           {t('No registration needed.')}
         </Text>
 
-        <Link external href="https://docs.pancakeswap.finance/">
-          {t('Learn how to start')}
-        </Link>
         {!account && <ConnectWalletButton mt="24px" />}
       </Wrapper>
     </>

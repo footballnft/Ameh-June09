@@ -1,8 +1,8 @@
 {
-  "short_name": "PancakeSwap",
-  "name": "PancakeSwap",
-  "description": "Farm CAKE with Pancake LP Tokens",
-  "homepage_url": "https://pancakeswap.finance",
+  "short_name": "AmehSwap",
+  "name": "AmehSwap",
+  "description": "Buy crypto with Fiat, with little verification",
+  "homepage_url": "https://amehswap.com",
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#1FC7D4",
@@ -17,7 +17,7 @@
     {
       "src": "logo.png",
       "type": "image/png",
-      "sizes": "256x256"
+      "sizes": "512x512"
     }
   ]
 }

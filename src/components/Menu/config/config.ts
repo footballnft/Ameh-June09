@@ -5,8 +5,6 @@ import {
   SwapFillIcon,
   EarnFillIcon,
   EarnIcon,
-  TrophyIcon,
-  TrophyFillIcon,
   NftIcon,
   NftFillIcon,
   MoreIcon,
@@ -23,11 +21,27 @@ export type ConfigMenuItemsType = Omit<MenuItemsType, 'items'> & { hideSubNav?: 
 
 const config: (t: ContextApi['t'], languageCode?: string) => ConfigMenuItemsType[] = (t, languageCode) => [
   {
+    label: t('BuyCrypto'),
+    icon: EarnIcon,
+    fillIcon: EarnFillIcon,
+    href: '/Buy',
+    showItemsOnMobile: false,
+    items: [
+      {
+        label: t('BuyCrypto'),
+        href: '/Buy',
+      },
+      {
+        label: t(''),
+        href: '',
+      },
+    ],
+  },
+  {
     label: t('Trade'),
+    href: '/swap',
     icon: SwapIcon,
     fillIcon: SwapFillIcon,
-    href: '/swap',
-    showItemsOnMobile: false,
     items: [
       {
         label: t('Swap'),
@@ -64,6 +78,7 @@ const config: (t: ContextApi['t'], languageCode?: string) => ConfigMenuItemsType
       },
     ],
   },
+  /*
   {
     label: t('Win'),
     href: '/prediction',
@@ -85,6 +100,7 @@ const config: (t: ContextApi['t'], languageCode?: string) => ConfigMenuItemsType
       },
     ],
   },
+  */
   {
     label: t('NFT'),
     href: `${nftsBaseUrl}`,
@@ -116,32 +132,32 @@ const config: (t: ContextApi['t'], languageCode?: string) => ConfigMenuItemsType
         href: '/info',
       },
       {
-        label: t('IFO'),
-        href: '/ifo',
+        // label: t('IFO'),
+        // href: '/ifo',
       },
       {
-        label: t('Voting'),
-        href: '/voting',
+        // label: t('Voting'),
+        // href: '/voting',
       },
       {
-        type: DropdownMenuItemType.DIVIDER,
+        // type: DropdownMenuItemType.DIVIDER,
       },
       {
-        label: t('Leaderboard'),
-        href: '/teams',
+        // label: t('Leaderboard'),
+        // href: '/teams',
       },
       {
-        type: DropdownMenuItemType.DIVIDER,
+        // type: DropdownMenuItemType.DIVIDER,
       },
       {
-        label: t('Blog'),
-        href: 'https://medium.com/pancakeswap',
-        type: DropdownMenuItemType.EXTERNAL_LINK,
+        // label: t('Blog'),
+        // href: 'https://medium.com/pancakeswap',
+        // type: DropdownMenuItemType.EXTERNAL_LINK,
       },
       {
-        label: t('Docs'),
-        href: 'https://docs.pancakeswap.finance',
-        type: DropdownMenuItemType.EXTERNAL_LINK,
+        // label: t('Docs'),
+        // href: 'https://docs.pancakeswap.finance',
+        // type: DropdownMenuItemType.EXTERNAL_LINK,
       },
     ],
   },

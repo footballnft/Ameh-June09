@@ -1,9 +1,10 @@
 import { Flex } from '@pancakeswap/uikit'
+import dynamic from 'next/dynamic'
 import { PageMeta } from 'components/Layout/Page'
 import styled from 'styled-components'
-import Footer from './components/Footer'
 import Hero from './components/Hero'
-import { Proposals } from './components/Proposals'
+
+const Proposals = dynamic(() => import('./components/Proposals/Proposals'), { ssr: false })
 
 const Chrome = styled.div`
   flex: none;
@@ -25,9 +26,6 @@ const Voting = () => {
         <Content>
           <Proposals />
         </Content>
-        <Chrome>
-          <Footer />
-        </Chrome>
       </Flex>
     </>
   )

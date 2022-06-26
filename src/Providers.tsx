@@ -1,4 +1,4 @@
-import { ModalProvider, light, dark, MatchBreakpointsProvider } from '@pancakeswap/uikit'
+import { ModalProvider, light, dark } from '@pancakeswap/uikit'
 import { Web3ReactProvider } from '@web3-react/core'
 import { Provider } from 'react-redux'
 import { SWRConfig } from 'swr'
@@ -19,7 +19,6 @@ const Providers: React.FC<{ store: Store }> = ({ children, store }) => {
   return (
     <Web3ReactProvider getLibrary={getLibrary}>
       <Provider store={store}>
-        <MatchBreakpointsProvider>
           <ToastsProvider>
             <NextThemeProvider>
               <StyledThemeProvider>
@@ -35,7 +34,6 @@ const Providers: React.FC<{ store: Store }> = ({ children, store }) => {
               </StyledThemeProvider>
             </NextThemeProvider>
           </ToastsProvider>
-        </MatchBreakpointsProvider>
       </Provider>
     </Web3ReactProvider>
   )

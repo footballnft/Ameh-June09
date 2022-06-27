@@ -13,7 +13,7 @@ import {
   SubMenuItem,
   EllipsisIcon,
   LinkExternal,
-  useMatchBreakpointsContext,
+  useMatchBreakpoints,
 } from '@pancakeswap/uikit'
 import { getBscScanLink } from 'utils'
 import { getBalanceNumber } from 'utils/formatBalance'
@@ -114,7 +114,7 @@ const AuctionLeaderboardTable: React.FC<{ bidders: Bidder[]; noBidsText: string 
   const cakePriceBusd = usePriceCakeBusd()
   const { t } = useTranslation()
 
-  const { isMobile } = useMatchBreakpointsContext()
+  const { isMobile } = useMatchBreakpoints()
   const [onShowWhitelistedBidders] = useModal(<WhitelistedBiddersModal />)
 
   const totalBidders = bidders.length
